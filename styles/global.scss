@@ -1,0 +1,51 @@
+html,
+body {
+  min-height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100dvh; /* usa unidades dinámicas modernas */
+}
+
+h1 {
+  color: red;
+}
+.container {
+  min-height: 100%;
+  width: 100%;
+  .container_header {
+    border: 1px solid yellow;
+    height: 20%;
+  }
+  .container_info {
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    .container_filter {
+      width: 25%;
+      height: 100%;
+      border: 1px solid green;
+    }
+    .container_books {
+      height: 100%;
+      width: 75%;
+      overflow-y: auto;
+      border: 1px solid blue;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+  }
+}
+
+.card {
+  border: 1px solid red;
+  width: 500px;
+  height: 300px;
+}

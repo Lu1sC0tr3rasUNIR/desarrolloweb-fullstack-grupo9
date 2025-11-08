@@ -1,0 +1,279 @@
+// src/lib/myBackend.ts
+
+export interface IBooks {
+  id: number;
+  title: string;
+  author: string;
+  year: number;
+  genre: string;
+  pages: number;
+  publisher: string;
+  language: string;
+  isbn: string;
+  description: string;
+}
+
+export const myBackend = (): IBooks[] => {
+  return [
+    {
+      id: 1,
+      title: "Cien años de soledad",
+      author: "Gabriel García Márquez",
+      year: 1967,
+      genre: "Realismo mágico",
+      pages: 471,
+      publisher: "Editorial Sudamericana",
+      language: "Español",
+      isbn: "9780307474728",
+      description:
+        "La historia de la familia Buendía a lo largo de siete generaciones en el pueblo ficticio de Macondo.",
+    },
+    {
+      id: 2,
+      title: "Don Quijote de la Mancha",
+      author: "Miguel de Cervantes",
+      year: 1605,
+      genre: "Novela clásica",
+      pages: 863,
+      publisher: "Francisco de Robles",
+      language: "Español",
+      isbn: "9788491050297",
+      description:
+        "Las aventuras del ingenioso hidalgo Don Quijote y su escudero Sancho Panza en su búsqueda de justicia.",
+    },
+    {
+      id: 3,
+      title: "1984",
+      author: "George Orwell",
+      year: 1949,
+      genre: "Distopía",
+      pages: 328,
+      publisher: "Secker & Warburg",
+      language: "Inglés",
+      isbn: "9780451524935",
+      description:
+        "Una crítica al totalitarismo y la vigilancia estatal a través del régimen del Gran Hermano.",
+    },
+    {
+      id: 4,
+      title: "El Principito",
+      author: "Antoine de Saint-Exupéry",
+      year: 1943,
+      genre: "Fábula filosófica",
+      pages: 96,
+      publisher: "Reynal & Hitchcock",
+      language: "Francés",
+      isbn: "9780156012195",
+      description:
+        "Un cuento sobre la inocencia, la amistad y el amor contado desde la perspectiva de un niño viajero.",
+    },
+    {
+      id: 5,
+      title: "Crimen y castigo",
+      author: "Fiódor Dostoyevski",
+      year: 1866,
+      genre: "Ficción psicológica",
+      pages: 671,
+      publisher: "The Russian Messenger",
+      language: "Ruso",
+      isbn: "9780140449136",
+      description:
+        "Raskólnikov lucha con la culpa y la redención tras cometer un asesinato en San Petersburgo.",
+    },
+    {
+      id: 6,
+      title: "Orgullo y prejuicio",
+      author: "Jane Austen",
+      year: 1813,
+      genre: "Romance clásico",
+      pages: 279,
+      publisher: "T. Egerton",
+      language: "Inglés",
+      isbn: "9781503290563",
+      description:
+        "La historia de Elizabeth Bennet y el señor Darcy en una crítica social sobre la época georgiana.",
+    },
+    {
+      id: 7,
+      title: "Matar a un ruiseñor",
+      author: "Harper Lee",
+      year: 1960,
+      genre: "Ficción social",
+      pages: 281,
+      publisher: "J.B. Lippincott & Co.",
+      language: "Inglés",
+      isbn: "9780061120084",
+      description:
+        "Una niña narra la lucha de su padre, un abogado, por defender a un hombre negro injustamente acusado.",
+    },
+    {
+      id: 8,
+      title: "El nombre de la rosa",
+      author: "Umberto Eco",
+      year: 1980,
+      genre: "Misterio histórico",
+      pages: 512,
+      publisher: "Bompiani",
+      language: "Italiano",
+      isbn: "9780156001311",
+      description:
+        "Un fraile franciscano investiga una serie de asesinatos en una abadía medieval.",
+    },
+    {
+      id: 9,
+      title: "El Hobbit",
+      author: "J. R. R. Tolkien",
+      year: 1937,
+      genre: "Fantasía",
+      pages: 310,
+      publisher: "George Allen & Unwin",
+      language: "Inglés",
+      isbn: "9780547928227",
+      description:
+        "Bilbo Bolsón emprende una aventura inesperada junto a enanos para recuperar un tesoro custodiado por un dragón.",
+    },
+    {
+      id: 10,
+      title: "Los miserables",
+      author: "Victor Hugo",
+      year: 1862,
+      genre: "Drama histórico",
+      pages: 1232,
+      publisher: "A. Lacroix, Verboeckhoven & Cie.",
+      language: "Francés",
+      isbn: "9780451419439",
+      description:
+        "Jean Valjean busca redención mientras es perseguido por el implacable inspector Javert.",
+    },
+    {
+      id: 11,
+      title: "Rayuela",
+      author: "Julio Cortázar",
+      year: 1963,
+      genre: "Experimental",
+      pages: 600,
+      publisher: "Editorial Sudamericana",
+      language: "Español",
+      isbn: "9788437604185",
+      description:
+        "Una novela abierta que invita al lector a decidir el orden de lectura y a reflexionar sobre la existencia.",
+    },
+    {
+      id: 12,
+      title: "Fahrenheit 451",
+      author: "Ray Bradbury",
+      year: 1953,
+      genre: "Ciencia ficción",
+      pages: 194,
+      publisher: "Ballantine Books",
+      language: "Inglés",
+      isbn: "9781451673319",
+      description:
+        "Una sociedad futurista donde los libros están prohibidos y los bomberos los queman.",
+    },
+    {
+      id: 13,
+      title: "La sombra del viento",
+      author: "Carlos Ruiz Zafón",
+      year: 2001,
+      genre: "Misterio literario",
+      pages: 565,
+      publisher: "Planeta",
+      language: "Español",
+      isbn: "9788408172177",
+      description:
+        "Un joven descubre un libro maldito que cambia su vida en la Barcelona de la posguerra.",
+    },
+    {
+      id: 14,
+      title: "It",
+      author: "Stephen King",
+      year: 1986,
+      genre: "Terror",
+      pages: 1138,
+      publisher: "Viking Press",
+      language: "Inglés",
+      isbn: "9780450411433",
+      description:
+        "Un grupo de amigos enfrenta a una entidad maligna que toma la forma de un payaso llamado Pennywise.",
+    },
+    {
+      id: 15,
+      title: "El alquimista",
+      author: "Paulo Coelho",
+      year: 1988,
+      genre: "Ficción espiritual",
+      pages: 208,
+      publisher: "HarperOne",
+      language: "Portugués",
+      isbn: "9780061122415",
+      description:
+        "Santiago, un joven pastor, emprende un viaje en busca de su leyenda personal y del verdadero tesoro de la vida.",
+    },
+    {
+      id: 16,
+      title: "Los juegos del hambre",
+      author: "Suzanne Collins",
+      year: 2008,
+      genre: "Ciencia ficción distópica",
+      pages: 374,
+      publisher: "Scholastic Press",
+      language: "Inglés",
+      isbn: "9780439023481",
+      description:
+        "Katniss Everdeen debe sobrevivir a un mortal torneo televisado donde solo uno puede quedar con vida.",
+    },
+    {
+      id: 17,
+      title: "El código Da Vinci",
+      author: "Dan Brown",
+      year: 2003,
+      genre: "Thriller",
+      pages: 689,
+      publisher: "Doubleday",
+      language: "Inglés",
+      isbn: "9780307474278",
+      description:
+        "El profesor Langdon descubre una conspiración relacionada con el Santo Grial y sociedades secretas.",
+    },
+    {
+      id: 18,
+      title: "La Odisea",
+      author: "Homero",
+      year: -800,
+      genre: "Épica",
+      pages: 541,
+      publisher: "Antiguo Grecia",
+      language: "Griego",
+      isbn: "9780140268867",
+      description:
+        "Las aventuras de Ulises al intentar regresar a Ítaca tras la guerra de Troya.",
+    },
+    {
+      id: 19,
+      title: "Drácula",
+      author: "Bram Stoker",
+      year: 1897,
+      genre: "Terror gótico",
+      pages: 418,
+      publisher: "Archibald Constable and Company",
+      language: "Inglés",
+      isbn: "9780486411095",
+      description:
+        "El conde Drácula intenta trasladarse a Inglaterra mientras un grupo de personas intenta detenerlo.",
+    },
+    {
+      id: 20,
+      title: "El señor de los anillos: La comunidad del anillo",
+      author: "J. R. R. Tolkien",
+      year: 1954,
+      genre: "Fantasía épica",
+      pages: 423,
+      publisher: "George Allen & Unwin",
+      language: "Inglés",
+      isbn: "9780261102354",
+      description:
+        "Frodo emprende una misión para destruir el Anillo Único y evitar que caiga en manos del mal.",
+    },
+  ];
+};
