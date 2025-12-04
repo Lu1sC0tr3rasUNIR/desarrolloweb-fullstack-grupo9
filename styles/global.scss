@@ -1,3 +1,7 @@
+@use './typography/index' as typography;
+@use './components/index' as components;
+@use './variables/index' as variables;
+
 html,
 body {
   min-height: 100%;
@@ -12,9 +16,6 @@ body {
   min-height: 100dvh; /* usa unidades dinámicas modernas */
 }
 
-h1 {
-  color: red;
-}
 .container {
   min-height: 100%;
   width: 100%;
@@ -44,8 +45,3 @@ h1 {
   }
 }
 
-.card {
-  border: 1px solid red;
-  width: 500px;
-  height: 300px;
-}

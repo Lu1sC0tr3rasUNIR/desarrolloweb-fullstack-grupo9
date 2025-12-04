@@ -1,4 +1,6 @@
 "use client";
+
+import Button from "@/components/button";
 import Card from "@/components/card";
 import { IBooks, myBackend } from "@/lib/myBackend";
 import { useState } from "react";
@@ -23,7 +25,10 @@ export default function Home() {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
-        <button onClick={() => alert(`Buscando: ${query}`)}>Buscar</button>
+        <Button label="Buscar" variant="primary"></Button>
+        <Button label="Buscar" variant="danger"></Button>
+        <Button label="Buscar" variant="confirm"></Button>
+        <Button label="Buscar" variant="alert"></Button>
       </div>
       <div className="container_info">
         <div className="container_filter">
