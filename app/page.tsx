@@ -27,7 +27,7 @@ export default function Home() {
         />
         <Button label="Buscar" variant="primary"></Button>
         <Button label="Buscar" variant="danger"></Button>
-        <Button label="Buscar" variant="confirm"></Button>
+        <Button label="Buscar" variant="success"></Button>
         <Button label="Buscar" variant="alert"></Button>
       </div>
       <div className="container_info">

@@ -1,6 +1,7 @@
 @use './typography/index' as typography;
 @use './components/index' as components;
 @use './variables/index' as variables;
+@use './pages/index' as mixins;
 
 html,
 body {

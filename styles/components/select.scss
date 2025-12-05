@@ -1,0 +1,37 @@
+@use "sass:map";
+@use '../variables/colors.scss' as colors;
+
+.select-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.select-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  line-height: 1;
+}
+
+.select-base {
+  padding: 10px;
+  border: 2px solid map.get(map.get(colors.$palette, 'primary'), 3);
+  border-radius: 5px;
+  font-size: 16px;
+  background: white;
+  transition: border-color 0.2s ease, box-shadow 0.15s ease;
+  appearance: none;
+
+  &:focus {
+    border-color: map.get(map.get(colors.$palette, 'info'), 200);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.08);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}

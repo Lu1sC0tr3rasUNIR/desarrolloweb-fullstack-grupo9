@@ -1,17 +1,10 @@
 // src/lib/myBackend.ts
 
-export interface IBooks {
-  id: number;
-  title: string;
-  author: string;
-  year: number;
-  genre: string;
-  pages: number;
-  publisher: string;
-  language: string;
-  isbn: string;
-  description: string;
-}
+import { IBooks } from "@/interfaces/lib/myBackendInterface";
+
+export const userDB = "admin";
+export const passwordDB = "admin";
+export const tokenDB = "fake-jwt-token";
 
 export const myBackend = (): IBooks[] => {
   return [
