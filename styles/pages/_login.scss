@@ -1,0 +1,52 @@
+@use "../variables/_colors.scss" as colors;
+
+.login-page {
+  width: 100%;
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .login-form {
+    width: 40%;
+    border: 2px solid colors.get-color("paper", 7);
+    border-radius: 10px;
+    padding: 20px 30px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+
+    .login-logo {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .login-inputs {
+      display: flex;
+      flex-direction: column;
+			
+      gap: 20px;
+
+      .login-inputs_titulo {
+        font-size: 20px;
+        font-weight: 600;
+        text-align: center;
+      }
+    }
+    .login-inputs_forgot-password {
+			margin-top: 5px;
+
+      a {
+        color: colors.get-color("paper", 7);
+      }
+      display: flex;
+      justify-content: space-between;
+    }
+    .login-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+    }
+  }
+}

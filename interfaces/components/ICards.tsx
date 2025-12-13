@@ -9,4 +9,6 @@ export interface ICard {
   publisher?: string;
   language?: string;
   isbn?: string;
+  price?: number;
+  stock?: number;
 }

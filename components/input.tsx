@@ -2,7 +2,6 @@
 
 import { useId } from "react";
 import { IInput } from "@/interfaces/components/IInput";
-import "@/styles/components/input.scss";
 
 export default function Input({
   id,

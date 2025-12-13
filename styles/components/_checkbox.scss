@@ -1,0 +1,24 @@
+@use "../variables/_colors.scss" as colors;
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  user-select: none;
+  color: colors.get-color("paper", 7);
+  input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    cursor: pointer;
+  }
+  &:hover {
+    color: colors.get-color("paper", 5);
+  }
+
+  input[type="checkbox"]:disabled + label {
+    color: colors.get-color("paper", 5);
+    cursor: not-allowed;
+  }
+}

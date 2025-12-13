@@ -1,0 +1,79 @@
+@use "sass:map";
+@use '../variables/_colors.scss' as colors;
+
+.button-base {
+  padding: 5px 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.base {
+  background-color: white;
+  color: colors.get-color('paper', 7);
+}
+
+.primary {
+  background-color: colors.get-color('paper', 1);
+  border: 2px solid colors.get-color('paper', 7);
+  color: colors.get-color('paper', 7);
+  box-shadow: colors.get-color('paper', 5) 2px 2px 1px;
+
+  &:hover {
+    background-color: colors.get-color('paper', 4);
+  }
+}
+
+.danger {
+  background-color: colors.get-color('paper', 1);
+  border: 2px solid colors.get-color('paper', 7);
+  color: colors.get-color('paper', 7);
+  box-shadow: colors.get-color('paper', 5) 2px 2px 1px;
+
+
+  &:hover {
+    background-color: colors.get-color('paper', 4);
+  }
+}
+
+.success {
+  background-color: colors.get-color('paper', 1);
+  border: 2px solid colors.get-color('paper', 7);
+  color: colors.get-color('paper', 7);
+  box-shadow: colors.get-color('paper', 5) 2px 2px 1px;
+
+
+  &:hover {
+    background-color: colors.get-color('paper', 4);
+  }
+}
+
+.alert {
+  background-color: colors.get-color('paper', 1);
+  border: 2px solid colors.get-color('paper', 7);
+  color: colors.get-color('paper', 7);
+  box-shadow: colors.get-color('paper', 5) 2px 2px 1px;
+
+
+  &:hover {
+    background-color: colors.get-color('paper', 4);
+  }
+}
+
+.button-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+}
+
+.button-label {
+  display: inline-flex;
+  align-items: center;
+}

@@ -9,4 +9,6 @@ export interface IBooks {
   language: string;
   isbn: string;
   description: string;
+  price?: number;
+  stock?: number;
 }

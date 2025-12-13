@@ -1,5 +1,7 @@
-@use './button.scss' as button;
-@use './card.scss' as card;
-@use './counter.scss' as counter;
-@use './input.scss' as input;
-@use './select.scss' as select;
+@use './button';
+@use './_card.scss';
+@use './_counter.scss';
+@use './_input.scss';
+@use './_select.scss';
+@use './_Icons.scss';
+@use './_checkbox.scss';

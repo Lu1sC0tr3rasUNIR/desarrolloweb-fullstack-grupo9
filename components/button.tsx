@@ -1,4 +1,5 @@
 import { IButton } from "@/interfaces/components/IButton";
+import Icons from "@/components/icons";
 
 export default function Button({
   label,
@@ -6,14 +7,23 @@ export default function Button({
   variant = "primary",
   disabled = false,
   className = "",
+  icon,
+  iconColor,
 }: IButton) {
   return (
+
     <button
       onClick={onClick}
       disabled={disabled}
       className={`button-base ${variant} ${className}`}
+      
     >
-      {label}
+      {icon && (
+        <span className="button-icon">
+          <Icons name={icon} color={iconColor} />
+        </span>
+      )}
+      <span className="button-label">{label}</span>
     </button>
   );
 }

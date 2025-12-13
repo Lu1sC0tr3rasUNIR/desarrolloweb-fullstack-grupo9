@@ -2,7 +2,7 @@
 
 import { ICard } from "@/interfaces/components/ICards";
 
-export default function Card({ title, description, isbn }: ICard) {
+export default function Card({ title, description, isbn, price }: ICard) {
   return (
     <div className="card">
       <div className="card_header">
@@ -11,6 +11,9 @@ export default function Card({ title, description, isbn }: ICard) {
       </div>
       <div className="card_body">
         <p>{description}</p>
+      </div>
+      <div className="card_footer">
+        <p>Price: ${price}</p>
       </div>
     </div>
   );

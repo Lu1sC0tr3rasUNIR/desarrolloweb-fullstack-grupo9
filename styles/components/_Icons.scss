@@ -1,0 +1,12 @@
+@use "sass:map";
+@use '../variables/_colors.scss' as colors;
+
+
+svg{
+    path { 
+        stroke: colors.get-color('paper', 7);
+    }
+    circle { 
+        stroke: colors.get-color('paper', 7);
+    }
+}

@@ -51,21 +51,20 @@ export default function AuthProvider({
   );
 
   useEffect(() => {
+    /*
     if (!isAuthenticated) {
-      // Nota: evita navegar en cada render; lo haremos con el contador/intervalo
       router.push("/login");
-    }
+    
 		console.log("AuthProvider useEffect - isAuthenticated:", isAuthenticated);
     const interval = setInterval(() => {
       countRef.current += 1;
       if (!isAuthenticated && countRef.current === 5) {
-        router.push("/components");
+        router.push("/");
       }
     }, 1000);
 
     return () => clearInterval(interval);
-
-    // limpia el intervalo al desmonta
+    */
   }, [isAuthenticated, router]);
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

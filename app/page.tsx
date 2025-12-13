@@ -2,7 +2,8 @@
 
 import Button from "@/components/button";
 import Card from "@/components/card";
-import { IBooks, myBackend } from "@/lib/myBackend";
+import { IBooks } from "@/interfaces/lib/myBackendInterface";
+import { myBackend } from "@/lib/myBackend";
 import { useState } from "react";
 
 export default function Home() {

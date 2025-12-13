@@ -1,3 +1,6 @@
+@use "sass:map";
+@use '../variables/_colors.scss' as colors;
+
 .card {
   width: 280px;
   height: 320px;
@@ -17,7 +20,7 @@
 
   .card_header {
     padding: 20px;
-    background: linear-gradient(135deg, #007bff 0%, #0052aa 100%);
+    background: colors.get-color('paper', 5);
     color: white;
 
     h2 {
@@ -42,15 +45,21 @@
       margin: 0;
       font-size: 14px;
       line-height: 1.6;
-      color: #666;
+      color: colors.get-color('paper', 7);
     }
   }
 
   .card_footer {
     padding: 16px 20px;
-    border-top: 1px solid #eee;
+    border-top: 2px solid colors.get-color('paper', 3);
+    color: colors.get-color('paper', 7);
     display: flex;
     gap: 8px;
+
+    p{
+      font-size: 12px;
+      font-weight: 600;
+    }
 
     button {
       flex: 1;

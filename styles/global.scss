@@ -1,7 +1,7 @@
-@use './typography/index' as typography;
-@use './components/index' as components;
-@use './variables/index' as variables;
-@use './pages/index' as mixins;
+@use "./typography/index" as typography;
+@use "./components/index" as components;
+@use "./variables/index" as variables;
+@use "./pages/index" as pages;
 
 html,
 body {
@@ -12,7 +12,6 @@ body {
   overflow-x: hidden;
   box-sizing: border-box;
 }
-
 body {
   min-height: 100dvh; /* usa unidades dinámicas modernas */
 }
@@ -45,4 +44,3 @@ body {
     }
   }
 }
-

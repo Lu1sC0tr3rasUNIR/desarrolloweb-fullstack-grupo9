@@ -1,5 +1,5 @@
 @use "sass:map";
-@use '../variables/colors.scss' as colors;
+@use "../variables/_colors.scss" as colors;
 
 .select-wrapper {
   display: flex;
@@ -17,17 +17,16 @@
 
 .select-base {
   padding: 10px;
-  border: 2px solid map.get(map.get(colors.$palette, 'primary'), 3);
   border-radius: 5px;
+  border: 2px solid colors.get-color('paper', 5);
   font-size: 16px;
   background: white;
   transition: border-color 0.2s ease, box-shadow 0.15s ease;
   appearance: none;
 
   &:focus {
-    border-color: map.get(map.get(colors.$palette, 'info'), 200);
+    border: 2px solid colors.get-color("paper", 7);
     outline: none;
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.08);
   }
 
   &:disabled {

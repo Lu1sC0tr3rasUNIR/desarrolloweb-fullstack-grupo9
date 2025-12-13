@@ -1,0 +1,32 @@
+@use '../variables/_colors.scss' as colors;
+
+// Usamos font-family global Comic Sans
+body {
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  font-weight: 700;
+  margin: 0;
+}
+
+button {
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  font-weight: bold;
+}
+
+h1 { font-size: 32px; }
+h2 { font-size: 28px; }
+h3 { font-size: 24px; }
+h4 { font-size: 20px; }
+h5 { font-size: 18px; }
+h6 { font-size: 16px; }
+
+h1, h2, h3, h4, h5, h6 {
+  color: colors.get-color("paper", 7);
+}
+
+p { font-size: 16px; color: colors.get-color("paper", 7);}
