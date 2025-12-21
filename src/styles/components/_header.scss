@@ -3,8 +3,9 @@
 .header-component {
   display: flex;
   flex-direction: column;
-
   height: 100px;
+  box-sizing: border-box;
+
   .header-component-top {
     display: flex;
     height: 60px;
@@ -30,5 +31,7 @@
   .header-component-bottom {
     display: flex;
     flex: 1 ;
+    border-top: 2px solid colors.get-color("paper", 7);
+    border-bottom: 2px solid colors.get-color("paper", 7);  
   }
 }

@@ -125,6 +125,24 @@ export default function Icons({ name, color }: IICons) {
           />
         </svg>
       );
+      case "heart":
+      return (
+        <svg  
+          width="24"
+          height="24"
+          viewBox="0 0 24 24" 
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M12 21C12 21 5 14.6863 5 9.73684C5 6.31802 7.68629 4 11 4C12.933 4 14.6686 5.05499 15.5 6.63636C16.3314 5.05499 18.067 4 20 4C23.3137 4 26 6.31802 26 9.73684C26 14.6863 19 21 19 21H12Z"
+            stroke="currentColor"
+            strokeWidth="2" 
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      );
 
     default:
       return null;

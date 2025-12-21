@@ -1,7 +1,8 @@
-import { ReactNode } from 'react';
-import Header from '@/components/header';
-import AuthProvider from '@/providers/AuthProvider';
-import Navbar from './navbar';
+import { ReactNode } from "react";
+import Header from "@/components/header";
+import AuthProvider from "@/providers/AuthProvider";
+import Navbar from "./navbar";
+import StorageProvider from "@/providers/StorageProvider";
 
 interface LayoutProps {
   children: ReactNode;
@@ -10,10 +11,12 @@ interface LayoutProps {
 export default function Layout({ children }: LayoutProps) {
   return (
     <AuthProvider>
-      <Header >
-        <Navbar />
-      </Header>
-      {children}
+      <StorageProvider>
+        <Header>
+          <Navbar />
+        </Header>
+        {children}
+      </StorageProvider>
     </AuthProvider>
   );
 }

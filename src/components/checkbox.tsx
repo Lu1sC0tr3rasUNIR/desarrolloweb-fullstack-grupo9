@@ -4,7 +4,7 @@ export default function Checkbox({
   label,
   checked = false,
   onChange,
-  disabled = true,
+  disabled = false,
 }: ICheckbox) {
   return (
     <div className="checkbox-container">
