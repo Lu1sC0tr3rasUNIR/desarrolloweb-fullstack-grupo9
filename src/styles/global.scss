@@ -1,0 +1,51 @@
+@use "./typography/index" as typography;
+@use "./components/index" as components;
+@use "./variables/index" as variables;
+@use "./pages/index" as pages;
+@use './variables/colors' as colors;
+
+html,
+body {
+  min-height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100dvh; /* usa unidades dinámicas modernas */
+}
+
+input {
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  color: colors.get-color("paper", 7);
+}
+
+.container {
+  min-height: 100%;
+  width: 100%;
+  .container_header {
+    border: 1px solid yellow;
+    height: 20%;
+  }
+  .container_info {
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    .container_filter {
+      width: 25%;
+      height: 100%;
+    }
+    .container_books {
+      height: 100%;
+      width: 75%;
+      overflow-y: auto;
+      border: 1px solid blue;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+  }
+}
