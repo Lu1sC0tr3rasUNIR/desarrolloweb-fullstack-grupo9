@@ -20,20 +20,25 @@ export default function Home() {
         <Category />
       </div>
       <div className="container-home_books">
-        {filteredBooks.length > 0 ? (
-          filteredBooks.map((b, idx) => (
-            <Card
-              key={idx}
-              title={b.title}
-              description={b.description}
-              isbn={b.isbn}
-            />
-          ))
-        ) : (
-          <p className="text-gray-500 col-span-full text-center">
-            No se encontraron libros.
-          </p>
-        )}
+        <div className="container-home_books_promotion">
+          <p>PROMOCIONES</p>
+        </div>
+        <div className="container-home_books_view">
+          {filteredBooks.length > 0 ? (
+            filteredBooks.map((b, idx) => (
+              <Card
+                key={idx}
+                title={b.title}
+                description={b.description}
+                isbn={b.isbn}
+              />
+            ))
+          ) : (
+            <p className="text-gray-500 col-span-full text-center">
+              No se encontraron libros.
+            </p>
+          )}
+        </div>
       </div>
     </div>
   );
