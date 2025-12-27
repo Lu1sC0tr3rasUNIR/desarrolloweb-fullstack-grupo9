@@ -17,10 +17,44 @@
     transform: translateY(-4px);
   }
 
+
+.card_image {
+  position: relative;            /* contenedor de referencia */
+  width: 100%;
+  aspect-ratio: 3 / 4;           /* o height: 160px */
+  background: colors.get-color('paper', 2);
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* centra exacto */
+    width: 40%;
+    height: auto;
+    object-fit: contain;         /* o cover */
+    object-position: center;
+    display: block;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+}
+
+
+  @keyframes shimmer {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(100%);
+    }
+  }
+
   .card_header {
-    padding: 20px;
-    background: colors.get-color('paper', 5);
-    color: white;
+      padding: 20px;
+      background: colors.get-color('paper', 5);
+      color: white;
+
 
     h2 {
       margin: 0;
