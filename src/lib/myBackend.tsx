@@ -87,6 +87,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Una crítica al totalitarismo y la vigilancia estatal a través del régimen del Gran Hermano.",
       price: 20,
+      image: "https://images.cdn1.buscalibre.com/fit-in/360x360/10/42/10426f9e9ae4f7cd9eb5d33cef5aa143.jpg"
     },
     {
       id: 4,
@@ -103,6 +104,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Un cuento sobre la inocencia, la amistad y el amor contado desde la perspectiva de un niño viajero.",
       price: 15,
+      image: "https://image.cdn1.buscalibre.com/5b57fc1690f0b5295a8b4567.__RS360x360__.jpg"
     },
     {
       id: 5,
@@ -119,6 +121,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Raskólnikov lucha con la culpa y la redención tras cometer un asesinato en San Petersburgo.",
       price: 27,
+      image: "https://images.cdn1.buscalibre.com/fit-in/360x360/ea/1f/ea1fc691874fa49ce341d876a981e2c1.jpg"
     },
     {
       id: 6,

@@ -1,16 +1,18 @@
+
 @use '../variables/_colors.scss' as colors;
 
 .card {
-  width: 280px;
-  height: 320px;
+  width: 300px;
+  height: 450px;            /* altura total de la tarjeta */
   border: none;
   border-radius: 12px;
   background-color: #fff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+  overflow: hidden;          /* recorta desbordes externos */
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
+  min-height: 0;             /* ⬅️ permite que los hijos flex se encojan */
 
   &:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
@@ -19,78 +21,74 @@
 
 
 .card_image {
-  position: relative;            /* contenedor de referencia */
+  display: flex;
+  align-items: center;      /* centra verticalmente */
+  justify-content: center;  /* centra horizontalmente */
   width: 100%;
-  aspect-ratio: 3 / 4;           /* o height: 160px */
+  height: 180px;            /* ⬅️ AJUSTA aquí (160–220px según tu gusto) */
   background: colors.get-color('paper', 2);
   overflow: hidden;
 
   img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* centra exacto */
-    width: 40%;
+    width: 40%;             /* imagen “contenida” y centrada */
     height: auto;
-    object-fit: contain;         /* o cover */
-    object-position: center;
     display: block;
+    object-fit: contain;    /* muestra completa sin recortar */
+    object-position: center;
     user-select: none;
     -webkit-user-drag: none;
   }
 }
 
 
-  @keyframes shimmer {
-    from {
-      transform: translateX(-100%);
-    }
-    to {
-      transform: translateX(100%);
-    }
-  }
-
   .card_header {
-      padding: 20px;
-      background: colors.get-color('paper', 5);
-      color: white;
-
+    padding: 16px 20px;
+    background: colors.get-color('paper', 5);
+    color: white;
+    flex: 0 0 auto;
 
     h2 {
       margin: 0;
       font-size: 18px;
       font-weight: 700;
+      line-height: 1.25;
     }
 
     .isbn {
       font-size: 12px;
       opacity: 0.9;
-      margin-top: 8px;
+      margin-top: 6px;
+      word-break: break-word;
     }
   }
 
   .card_body {
     padding: 16px;
-    flex: 1;
-    overflow-y: auto;
+    flex: 1 1 auto;          /* ⬅️ ocupa el espacio restante */
+    overflow-y: auto;        /* ⬅️ scroll si el texto es largo */
+    min-height: 0;           /* ⬅️ crítico para flex column */
 
     p {
       margin: 0;
       font-size: 14px;
       line-height: 1.6;
       color: colors.get-color('paper', 7);
+      word-break: break-word;
     }
   }
 
   .card_footer {
     display: flex;
+    gap: 8px;
     justify-content: space-between;
-    padding: 16px 20px;
+    align-items: center;
+    padding: 12px 16px;
     border-top: 2px solid colors.get-color('paper', 3);
     color: colors.get-color('paper', 7);
-    gap: 8px;
+    flex: 0 0 auto;          /* ⬅️ no crecer */
 
-    p{
+    p {
+      margin: 0;
       font-size: 12px;
       font-weight: 600;
     }
@@ -108,19 +106,13 @@
       &.btn-edit {
         background-color: #007bff;
         color: white;
-
-        &:hover {
-          background-color: #0052aa;
-        }
+        &:hover { background-color: #0052aa; }
       }
 
       &.btn-delete {
         background-color: #dc3545;
         color: white;
-
-        &:hover {
-          background-color: #8d2731;
-        }
+        &:hover { background-color: #8d2731; }
       }
     }
   }
