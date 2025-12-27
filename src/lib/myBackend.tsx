@@ -70,7 +70,7 @@ export const myBackend = (): IBooks[] => {
       description:
         "Las aventuras del ingenioso hidalgo Don Quijote y su escudero Sancho Panza en su búsqueda de justicia.",
       price: 30,
-      image: "https://images.cdn.buscalibre.com/fit-in/360x360/73/b6/73b6fd96c31d26e2b6a3531808c1188c.jpg",
+      image: "https://images.cdn2.buscalibre.com/fit-in/360x360/73/b6/73b6fd96c31d26e2b6a3531808c1188c.jpg",
     },
     {
       id: 3,
