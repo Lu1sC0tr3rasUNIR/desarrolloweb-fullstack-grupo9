@@ -1579,7 +1579,7 @@ export const myBackend = (): IBooks[] => {
       pages: 608,
       publisher: "Plaza & Janés",
       language: "Español",
-      isbn: "9788401337207",
+      isbn: "9788401337276",
       tags: ["viajes en el tiempo", "victoriano", "aventura"],
       description:
         "Una novela que mezcla viajes temporales, Londres victoriano y las ideas de H. G. Wells.",
