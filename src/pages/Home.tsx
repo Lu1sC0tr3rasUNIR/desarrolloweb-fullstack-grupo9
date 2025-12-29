@@ -1,17 +1,31 @@
 import Card from "@/components/card";
 import Category from "@/components/category";
+import Pagination from "@/components/Pagination";
 import useCart from "@/hooks/useCart";
 import useLocalStorage from "@/hooks/useLocalStorage";
+import { useState }from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Home() {
   const { books } = useLocalStorage();
   const { filter } = useCart();
   const navigate = useNavigate();
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 10;
 
   const filteredBooks = Array.from(books.values()).filter((book) =>
     book.title.toLowerCase().includes(filter.toLowerCase())
   );
+
+  const totalPages = Math.ceil(filteredBooks.length / itemsPerPage);
+  const paginatedBooks = filteredBooks.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+  );
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+  };
 
   return (
     <div className="container-home">
@@ -20,8 +34,8 @@ export default function Home() {
       </div>
       <div className="container-home_books">
         <div className="container-home_books_view">
-          {filteredBooks.length > 0 ? (
-            filteredBooks.map((b, idx) => (
+          {paginatedBooks.length > 0 ? (
+            paginatedBooks.map((b, idx) => (
               <Card
                 key={idx}
                 book={b}
@@ -36,6 +50,11 @@ export default function Home() {
             </p>
           )}
         </div>
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={handlePageChange}
+        />
       </div>
     </div>
   );
