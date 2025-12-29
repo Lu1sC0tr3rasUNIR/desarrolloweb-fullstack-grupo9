@@ -1,8 +1,8 @@
 import { useAuth } from "@/hooks/useAuth";
 import { ReactNode } from "react";
 import Input from "./input";
-import useCart from "@/hooks/useCart";
 import Icons from "./icons";
+import useFilter from "@/hooks/useFilter";
 
 type HeaderProps = {
   children?: ReactNode;
@@ -11,7 +11,7 @@ type HeaderProps = {
 
 export default function Header({ children, className = "" }: HeaderProps) {
   const { isAuthenticated } = useAuth();
-  const { filter, addFilter } = useCart();
+  const { filter, addFilter } = useFilter();
 
   if (!isAuthenticated) {
     return <div />;

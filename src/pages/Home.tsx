@@ -1,17 +1,23 @@
 import Card from "@/components/card";
 import Category from "@/components/category";
-import useCart from "@/hooks/useCart";
+import useFilter from "@/hooks/useFilter";
 import useLocalStorage from "@/hooks/useLocalStorage";
 import { useNavigate } from "react-router-dom";
 
 export default function Home() {
-  const { books } = useLocalStorage();
-  const { filter } = useCart();
+  const { books, categoryFilter, valueFilter } = useLocalStorage();
+  const { filter } = useFilter();
   const navigate = useNavigate();
 
-  const filteredBooks = Array.from(books.values()).filter((book) =>
-    book.title.toLowerCase().includes(filter.toLowerCase())
-  );
+  const filteredBooks = Array.from(books.values()).filter((book) => {
+    return (
+      book.title.toLowerCase().includes(filter.toLowerCase()) &&
+      (categoryFilter.size === 0 ||
+        book.category.some((cat) => categoryFilter.has(cat))) &&
+      book.price >= Number(valueFilter.min) &&
+      book.price <= Number(valueFilter.max)
+    );
+  });
 
   return (
     <div className="container-home">
@@ -26,7 +32,7 @@ export default function Home() {
                 key={idx}
                 book={b}
                 onClick={() => {
-                  navigate(`/book/${b.isbn}`)
+                  navigate(`/book/${b.isbn}`);
                 }}
               />
             ))

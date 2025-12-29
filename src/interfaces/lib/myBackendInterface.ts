@@ -11,7 +11,7 @@ export interface IBooks {
   isbn: string;
   description: string;
   image?: string;
-  price?: number;
+  price: number;
   stock?: number;
   tags?: string[];
 }

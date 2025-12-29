@@ -2,9 +2,17 @@ import useLocalStorage from "@/hooks/useLocalStorage";
 import Checkbox from "./checkbox";
 import Input from "./input";
 import Button from "./button";
+import useFilter from "@/hooks/useFilter";
 
 export default function Category() {
   const { category } = useLocalStorage();
+  const {
+    categoryFilter,
+    addCategoryFilter,
+    removeCategoryFilter,
+    valueFilter,
+    updateValueFilter,
+  } = useFilter();
   return (
     <div className="category-container">
       <div className="category-container_inner">
@@ -12,16 +20,52 @@ export default function Category() {
       </div>
       <div className="category-container_list">
         {Array.from(category.values()).map((cat, idx) => (
-          <Checkbox key={idx} label={cat.label} checked={cat.checked} />
+          <Checkbox
+            key={idx}
+            label={cat.label}
+            checked={categoryFilter.has(cat.label)}
+            onChange={() => {
+              if (!categoryFilter.has(cat.label)) {
+                addCategoryFilter(cat.label);
+              } else {
+                removeCategoryFilter(cat.label);
+              }
+            }}
+          />
         ))}
       </div>
+      <div className="category-container_price">
+        <Input
+          placeholder="Precio mínimo"
+          type="number"
+          value={valueFilter.min ?? ""}
+          onChange={(e) =>
+            updateValueFilter(
+              e.target.value === "" ? null : +e.target.value,
+              valueFilter.max
+            )
+          }
+        />
+        <Input
+          placeholder="Precio máximo"
+          type="number"
+          value={valueFilter.max ?? ""}
+          onChange={(e) =>
+            updateValueFilter(
+              valueFilter.min,
+              e.target.value === "" ? null : +e.target.value
+            )
+          }
+        />
+      </div>
+
       <div className="category-container_subscription">
         <p>
           ¡Mantente en contacto! Únete a nuestro boletín y no te pierdas ningún
           lanzamiento.
         </p>
         <Input placeholder="Ingresa tu correo electrónico" />
-        <Button label="Suscribirse" />       
+        <Button label="Suscribirse" />
       </div>
     </div>
   );

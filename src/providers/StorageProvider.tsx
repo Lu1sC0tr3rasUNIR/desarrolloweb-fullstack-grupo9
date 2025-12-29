@@ -1,6 +1,6 @@
 import { StorageContext } from "@/context/StorageContext";
 import { ICheckbox } from "@/interfaces/components/ICheckbox";
-import { IStorageContext } from "@/interfaces/context/IStorageContext";
+import { IStorageContext, IValueFilter } from "@/interfaces/context/IStorageContext";
 import { ICartItem } from "@/interfaces/hooks/IUseCart";
 import { IBooks } from "@/interfaces/lib/myBackendInterface";
 import { myBackend, myCategorys } from "@/lib/myBackend";
@@ -18,7 +18,34 @@ export default function StorageProvider({
   const [activeCart, setActiveCart] = useState<boolean>(false);
   const [totalValue, setTotalValue] = useState<number>(0);
   const [filter, setFilter] = useState<string>("");
+  const [categoryFilter, setCategoryFilter] = useState<Map<string, string>>(
+    new Map()
+  );
+  const [valueFilter, setValueFilter] = useState<IValueFilter>({
+    min: 0,
+    max: 1000,
+  });
 
+  //Funciones de filtro
+  const addFilter = useCallback(
+    (filter: string) => {
+      setFilter(filter);
+    },
+    [setFilter]
+  );
+
+  const updateCatergoryFilter = useCallback(
+    (categoryMap: Map<string, string>) => {
+      setCategoryFilter(categoryMap);
+    },
+    [setCategoryFilter, categoryFilter]
+  );
+
+  const updateValueFilter = useCallback((min: number, max: number) => {
+    setValueFilter({ min, max });
+  }, []);
+
+  //Funciones de libros
   const getBook = (isbn: string): IBooks | undefined => {
     return books.get(isbn);
   };
@@ -38,15 +65,18 @@ export default function StorageProvider({
   //Funciones del carrito
   const updateCart = useCallback((newCart: Map<string, ICartItem>) => {
     setCart(newCart);
-    const value = Array.from(newCart.values()).reduce((acc, item) => acc + item.value, 0);
+    const value = Array.from(newCart.values()).reduce(
+      (acc, item) => acc + item.value,
+      0
+    );
     setTotalValue(value);
   }, []);
 
   const setCartStatus = useCallback(() => {
     setActiveCart(!activeCart);
   }, [activeCart]);
-  
 
+  //LLenar el backend
   useEffect(() => {
     const storedBooks = myBackend();
     const categoryBooks = myCategorys();
@@ -67,26 +97,36 @@ export default function StorageProvider({
     }
   }, []);
 
-  const addFilter = useCallback((filter: string) => {
-    setFilter(filter);
-  }, []);
-
   const value: IStorageContext = useMemo(
     () => ({
+      activeCart,
+      addBook,
+      addFilter,
+      books,
+      cart,
+      category,
+      categoryFilter,
+      updateCatergoryFilter,
+      filter,
+      getBook,
+      removeBook,
+      setCartStatus,
+      totalValue,
+      updateCart,
+      valueFilter,
+      updateValueFilter,
+    }),
+    [
       books,
       category,
+      cart,
       addBook,
       removeBook,
       getBook,
-      cart,
       updateCart,
       activeCart,
       setCartStatus,
-      totalValue,
-      addFilter, 
-      filter
-    }),
-    [books, category, cart, addBook, removeBook, getBook, updateCart, activeCart, setCartStatus]
+    ]
   );
 
   return (

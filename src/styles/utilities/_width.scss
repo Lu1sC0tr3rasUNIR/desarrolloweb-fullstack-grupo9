@@ -1,6 +1,0 @@
-// widths.scss
-@for $i from 0 through 100 {
-  .w-#{$i} {
-    max-width: #{$i}px;
-  }
-}

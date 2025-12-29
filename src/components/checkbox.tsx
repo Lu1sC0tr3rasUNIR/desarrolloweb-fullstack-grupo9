@@ -4,6 +4,7 @@ export default function Checkbox({
   label,
   checked = false,
   onChange,
+  onClick,
   disabled = false,
 }: ICheckbox) {
   return (
@@ -11,7 +12,8 @@ export default function Checkbox({
       <input
         type="checkbox"
         checked={checked}
-        onChange={(e) => onChange && onChange(e.target.checked)}
+        onClick={onClick}
+        onChange={onChange ? (e) => onChange(e.target.checked) : undefined}
         disabled={disabled}
         className="checkbox-input"
       />
