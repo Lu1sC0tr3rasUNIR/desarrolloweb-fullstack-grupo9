@@ -15,10 +15,14 @@ const Pagination: React.FC<IPagination> = ({ currentPage, totalPages, onPageChan
     }
   };
 
+  const iconColor = () => {
+    return "rgb(255, 255, 255)"; 
+  }
+
   return (
     <div className="pagination">
       <button onClick={handlePrevious} disabled={currentPage === 1}>
-        <Icons name="arrow-left" />
+        <Icons name="arrow-left" color={iconColor()} />
         Anterior
       </button>
       <span>
@@ -26,7 +30,7 @@ const Pagination: React.FC<IPagination> = ({ currentPage, totalPages, onPageChan
       </span>
       <button onClick={handleNext} disabled={currentPage === totalPages}>
         Siguiente
-        <Icons name="arrow-right" />
+        <Icons name="arrow-right" color={iconColor()} />
       </button>
     </div>
   );

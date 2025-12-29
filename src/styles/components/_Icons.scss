@@ -1,11 +1,12 @@
 @use "sass:map";
 @use '../variables/_colors.scss' as colors;
 
+
 svg{
-    /* Force icons to use currentColor and default to white */
-    color: white;
-    path,
-    circle {
-        stroke: currentColor;
-    }
+        path { 
+                stroke: colors.get-color('paper', 7);
+        }
+        circle { 
+                stroke: colors.get-color('paper', 7);
+        }
 }

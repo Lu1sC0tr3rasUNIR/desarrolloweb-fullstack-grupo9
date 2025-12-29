@@ -21,16 +21,11 @@
       width: 20px;
       height: 20px;
       margin: 0 5px;
-      stroke: get-color(paper, 1);
     }
 
     &:disabled {
       background-color: get-color(paper, 5);
       cursor: not-allowed;
-
-      svg {
-        stroke: get-color(paper, 1);
-      }
     }
   }
 
